@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-form"> 
+    <form action="/update/{{task_id}}" method="post" >
+        <textarea type="text" name="updatedTask"  value = '{{ task }}'> {{ task }}  </textarea>
+        <button type = "submit" class="btn btn-add">Update</button>
+    </form>
+</div>
+{% endblock %}

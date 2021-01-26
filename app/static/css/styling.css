@@ -1,0 +1,132 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height:50px;
+    overflow: hidden;
+    background-color: rgb(12, 4, 4);
+  }
+  
+  li {
+    float: left;
+    text-align: center;
+    font-size:30px;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color:  #4CAF50;
+    
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+
+  body{
+ 
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  align-items:center;
+  text-align:center;
+    
+    
+  }
+textarea{
+    width:90%;
+    margin:50px;
+    height:100px;
+}
+.btn{
+    display: inline-block;
+    width:100px;
+    height:30px;
+    background-color: grey;
+    color:white;
+    text-decoration: none;
+    padding:10px;
+}
+.entered-text{
+    font-size:20px;
+}
+.container-text{
+display:flex;
+flex-direction: column;
+}
+.container-elements{
+    display:flex;
+    vertical-align:center;
+   background-image: linear-gradient(to right bottom,rgba(245, 239, 239, 0.719),rgba(216, 216, 135, 0.644));  
+  margin:10px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width:100%;
+  padding:0 30px;
+    
+}
+.container-baseele{
+    display:flex;
+    vertical-align:center;
+    
+    margin:10px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width:100%;     
+}
+.container-navbar{  
+   width: 80%;
+    
+}
+.container-form{
+    width:70%;
+}
+.btn-add{
+    background-color: green;
+    color:white;
+    height:45px;
+    border-radius:5px;
+}
+
+.container-userform{
+  font-size:30px;
+  
+}
+
+.login-class{
+  
+}
+#password, #username, #password2, #email{
+  height: 30px;
+  font-size:20px;
+  margin:5px;
+  padding:2px;
+}
+#submit{
+    background-color: rgb(18, 43, 124);
+    color:white;
+    height:45px;
+    font-size:20px;
+    width: 20%;
+    border-radius:5px;
+}
+
+.messages{
+  background-color:None;
+  color:Red;
+}

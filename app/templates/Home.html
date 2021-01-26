@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block head %}
+<script type = "text/javascript"  src = "{{ url_for('static', filename = '/js/javaScript.js') }}" > </script>
+<link rel="shortcut icon" href="#" />
+{% endblock %}
+{% block content %}
+
+    <form action="/temp" method="post" class="container-form">
+        <textarea type="text" name="addTask"></textarea>
+        <br/>
+        <button type="submit" class="btn btn-add">Add Task</button>
+    </form>
+
+    <div class="container-text">
+    {% for task in tasks %}
+        <div class="container-elements">
+        <p class="entered-text"> {{ task.task }}</p> 
+        <div class="container-last">
+        <a class="btn"  href= "/update/{{task.id}}" >Update</a>
+        <a class="btn" href = "/delete/{{ task.id }}">Delete</a>
+    </div>
+         </div>
+    {% endfor %}
+    </div>
+
+
+{% endblock %}
+    

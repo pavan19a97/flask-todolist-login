@@ -1,0 +1,43 @@
+<html>
+    <head>
+        {% if title %}
+            <title>{{ title }} - Login</title>
+        {% else %}
+            <title>Welcome to LogginIn</title>
+
+            
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename = '/css/styling.css') }}">
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-navbar">
+            <ul class="container-baseele">
+            
+                {% if current_user.is_anonymous %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% else %}
+                <li><a href="{{ url_for('temp') }}">Home-Todotasks</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class= "messages">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+       
+        {% endif %}
+        {% endwith %}
+        </div>
+        {% block content %}
+        
+        
+        {% endblock %}
+    </body>
+</html>
