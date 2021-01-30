@@ -54,7 +54,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
-        print("this will be diaplayed")
+        
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -65,7 +65,8 @@ def register():
 def temp():
     if request.method == "GET":
         tasks = TodoTasks.query.filter(TodoTasks.user_id == current_user.id)
-        
+        if not task:
+            flask("Did't find any todos")
         return render_template('Home.html', title = "temp", tasks = tasks)
     if request.method ==  "POST":
         data = request.form.get("addTask")
@@ -74,8 +75,8 @@ def temp():
         addele = TodoTasks(task = data, user_id = current_user.id)
         db.session.add(addele)
         db.session.commit()
-       
-        return redirect(url_for("temp"))
+        flash("Task added successfully")
+        return redirect(url_for("temp")), 201
     return "nothing is done"
 
 
@@ -83,6 +84,8 @@ def temp():
 @login_required
 def delete(todo_id):
     task = TodoTasks.query.get(todo_id)
+    if not task:
+        flash("task did not exist for deletion")
     db.session.delete(task)
     db.session.commit()
     return redirect(url_for("temp")) 
